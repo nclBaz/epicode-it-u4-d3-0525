@@ -2,9 +2,9 @@ package entities;
 
 public class Circle {
 
+	public static double x;
 	// LISTA ATTRIBUTI
 	public double radius;
-	public double x;
 	public double y;
 
 	// LISTA COSTRUTTORI
@@ -12,19 +12,26 @@ public class Circle {
 	// gli attributi degli oggetti in fase di creazione. Nel nostro caso ad esempio possiamo creare un costruttore che assegni dei valori a
 	// raggio, x, y
 
-//	public Circle() { // new Circle();
-//	}
+	// I COSTRUTTORE
+	public Circle() { // new Circle();
+	}
 
+	// II COSTRUTTORE
+	public Circle(double radius) { // new Circle(2.4);
+		this.radius = radius;
+		Circle.x = 0.0;
+		this.y = 0.0;
+	}
+
+	// III COSTRUTTORE
 	public Circle(double radius, double x, double y) { // new Circle(1.5, 0.0, 1.3);
 		this.radius = radius;
-		this.x = x;
+		Circle.x = x;
 		this.y = y;
 	}
 
-	public Circle(double radius) { // new Circle(2.4);
-		this.radius = radius;
-		this.x = 0.0;
-		this.y = 0.0;
+	public static double getX() {
+		return x;
 	}
 
 	// LISTA METODI
