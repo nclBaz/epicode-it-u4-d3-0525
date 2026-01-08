@@ -45,9 +45,15 @@ public class Main {
 		// nomepackage.NomeClasse@identificativoOggetto entities.Student@5b480cf9
 		// Se non mi sta bene questo comportamento devo andare a definire un metodo .toString() nella classe
 
+		//s1.name = "Ajeje";
 		System.out.println(s1); // quando passo un oggetto ad un println verrà invocato automaticamente il suo metodo .toString()
 		System.out.println(s2);
 		System.out.println(s3);
+		System.out.println(s1.getName());
+		s1.setStudentType(StudentType.FULLSTACK);
+		System.out.println(s1);
+
+		//System.out.println(Student.numStudentiCreati);
 
 		// ---------------------------------------------------- COMPARAZIONE TRA 2 OGGETTI --------------------
 		// La maniera corretta di comparare 2 oggetti è, come per le Stringhe, usare .equals() (e non ==)
@@ -58,7 +64,6 @@ public class Main {
 		// if (s3 == s4) System.out.println("Gli studenti sono uguali");
 		if (s3.equals(s4)) System.out.println("Gli studenti sono uguali");
 		else System.out.println("Sono diversi");
-
 
 	}
 

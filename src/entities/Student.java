@@ -5,13 +5,13 @@ import java.util.Random;
 
 public class Student {
 	// Attributi statici
-	public static int numStudentiCreati = 0;
+	private static int numStudentiCreati = 0;
 	// Attributi di istanza
-	public int id;
-	public String name;
-	public String surname;
-	public boolean isFullTime;
-	public StudentType studentType;
+	private final int id;
+	private String name;
+	private String surname;
+	private boolean isFullTime;
+	private StudentType studentType;
 
 	// Costruttori
 	public Student(String name, String surname, boolean isFullTime, StudentType studentType) {
@@ -25,7 +25,58 @@ public class Student {
 	}
 
 	// Metodi statici
+	// GETTER STATICI
+	public static int getNumStudentiCreati() {
+		return numStudentiCreati;
+	}
+
+
 	// Metodi di istanza
+	// GETTER & SETTER DI ISTANZA
+	// NON SONO COSTRETTO AD AVERE TUTTI I GETTER E TUTTI I SETTER PER TUTTI GLI ATTRIBUTI
+	// Sono io che scelgo
+
+//	public int getId() { // Ad esempio se non volessi il getter sull'id lo tolgo
+//		return id;
+//	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		if (name.length() < 2) System.out.println("Nome troppo corto!");
+			// Un altro vantaggio dei setter è quello di poter eseguire tutta la
+			// logica di cui abbiamo bisogno, quindi a differenza dell'accesso
+			// DIRETTO, possiamo ad esempio effettuare dei controlli prima di
+			// sovrascrivere un valore
+		else this.name = name;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public boolean isFullTime() {
+		return isFullTime;
+	}
+
+	public void setFullTime(boolean fullTime) {
+		isFullTime = fullTime;
+	}
+
+	public StudentType getStudentType() {
+		return studentType;
+	}
+
+	public void setStudentType(StudentType studentType) {
+		this.studentType = studentType;
+	}
+
 
 	// Per farlo generare automaticamente ad intelliJ
 	// Tasto dx -> generate -> toString()
